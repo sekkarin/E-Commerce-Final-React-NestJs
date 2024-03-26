@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  mongo:
+    container_name: e-commerce-mongoDB
+    build: ./mongo-init
+    restart: always
+    volumes:
+      - ./mongo/data:/data/db #Helps to store MongoDB data in `./mongo/data`
+      - mongodb-ecom:/data/db
+    environment:
+      # MONGO_INITDB_ROOT_USERNAME: mongoDb
+      # MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: ecommerce
+      MONGODB_DATABASE: ecommerce
+    ports:
+      - 27019:27017
+
+volumes:
+  mongodb-ecom:
+    name: mongodb-ecom
+
