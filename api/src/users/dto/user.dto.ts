@@ -70,56 +70,17 @@ export class UpdateUserDto {
 }
 
 export class User {
-  @ApiProperty({
-    description: 'Unique identifier of the user',
-    example: '1234567890',
-  })
-  readonly id?: string;
-  @ApiProperty({
-    description: 'Email of the user',
-    example: 'user@example.com',
-  })
-  readonly email: string;
+  @ApiProperty()
+  name: string;
 
-  @ApiProperty({
-    description: 'Password of the user',
-    example: 'password123',
-  })
-  readonly password: string;
+  @ApiProperty()
+  email: string;
 
-  @ApiProperty({
-    description: 'Name of the user',
-    example: 'John Doe',
-  })
-  readonly name: string;
+  @ApiProperty()
+  photoURL: string;
 
-  @ApiProperty({
-    description: 'Role of the user (User or Admin)',
-    example: 'User',
-    enum: ['User', 'Admin'],
-  })
-  readonly role?: {
-    User: string;
-    Admin: string;
-  };
-
-  @ApiProperty({
-    description: 'Username of the user',
-    example: 'john_doe',
-  })
-  readonly username: string;
-
-  @ApiProperty({
-    description: 'Flag indicating whether the user is alive or not',
-    example: 'true',
-  })
-  readonly isAlive: string;
-
-  @ApiProperty({
-    description: "URL for the user's profile picture",
-    example: 'https://example.com/profile.jpg',
-  })
-  readonly profileUrl: string;
+  @ApiProperty()
+  role: string;
 }
 export class GetUserAllDto {
   @ApiProperty({

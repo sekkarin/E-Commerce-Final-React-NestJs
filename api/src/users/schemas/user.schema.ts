@@ -2,38 +2,16 @@ import * as mongoose from 'mongoose';
 
 export const UserSchema = new mongoose.Schema(
   {
-    firstName: {
-      type: String,
-      trim: true,
-    },
-    titleName: {
-      type: String,
-      trim: true,
-    },
-    lastName: {
-      type: String,
-      trim: true,
-    },
-    username: {
-      type: String,
-      trim: true,
-    },
-    password: {
-      type: String,
-      trim: true,
-    },
+    name: { type: String, require: true },
     email: {
       type: String,
+      require: true,
       trim: true,
+      minLength: 3,
+      unique: true,
     },
-    profileUrl: String,
-    refreshToken: {
-      type: String,
-    },
-    phone: {
-      type: String,
-      trim: true,
-    },
+    photoURL: { type: String, require: true },
+    role: { type: String, enum: ['admin', 'user'], default: 'user' },
   },
   {
     timestamps: true,

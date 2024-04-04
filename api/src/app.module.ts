@@ -7,9 +7,8 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import configuration from './../conf/configuration';
 import { LoggerMiddleware } from './utils/middlewares/logger.middleware';
-import { BooksModule } from './books/books.module';
-import { CategoryModule } from './category/category.module';
 import { ProductsModule } from './products/products.module';
+import { CartsModule } from './carts/carts.module';
 
 @Module({
   imports: [
@@ -20,9 +19,8 @@ import { ProductsModule } from './products/products.module';
       isGlobal: true,
       envFilePath: [configuration],
     }),
-    BooksModule,
-    CategoryModule,
     ProductsModule,
+    CartsModule,
   ],
   providers: [AppService],
 })
