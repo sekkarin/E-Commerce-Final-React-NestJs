@@ -1,43 +1,34 @@
-'use client'
-import React, { useContext, useState, useEffect } from "react";
-// import Modal from "./Modal";
-// import { AuthContext } from "../context/AuthProvider";
-import axios from "axios";
-// import Profile from "./Profile";
-// import ModalCard from "./ModalCard";
-// import useCart from "../hooks/useCart";
+"use client";
+import React, { useState, useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import Profile from "./Profile";
+import Modal from "./Modal";
+import ModalCard from "./ModalCart";
+import useAxiosPrivate from "@/hooks/axiosPrivate";
 
 const Navbar = () => {
-  // const { user, reload, setReload } = useContext(AuthContext);
-  // const [cart, refetch] = useCart();
-  // console.log(cart);
-
+  const user = useAppSelector((state) => state.auth.userCredential);
   const [totalQuantity, setTotalQuantity] = useState(0);
-  // useEffect(() => {
-  //   setReload(false);
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:4000/carts/${user.email}`
-  //       );
-  //       const data = await response.data;
+  const [cart, setCart] = useState([]);
+  const axiosPrivate = useAxiosPrivate();
 
-  //       const sumQuantity = data.reduce(
-  //         (total, cartItem) => total + cartItem.quantity,
-  //         0
-  //       );
-  //       console.log(sumQuantity);
-  //       if (response.status === 200) {
-  //         setTotalQuantity(sumQuantity);
-  //       }
-  //     } catch (error) {
-  //       console.log("No data");
-  //       console.log(error);
-  //     }
-  //   };
+  useEffect(() => {
+    const getCart = async () => {
+      if (user) {
+        const cart = await axiosPrivate(`/carts/${user?.email}`);
+        console.log(cart.data);
+        setCart(cart?.data);
+        const sumQuantity = cart?.data.reduce(
+          (total: number, cartItem: any) => total + cartItem?.quantity,
+          0
+        );
+        setTotalQuantity(sumQuantity);
+      }
+    };
+    getCart();
+  }, []);
+  // console.log(totalQuantity);
 
-  //   fetchData();
-  // }, [user , reload]);
   const navItem = (
     <>
       <li>
@@ -146,7 +137,11 @@ const Navbar = () => {
               tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle hidden sm:flex "
-              // onClick={() => document.getElementById("carts").showModal()}
+              onClick={() =>
+                (
+                  document.getElementById("carts") as HTMLFormElement
+                ).showModal()
+              }
             >
               <div className="indicator">
                 <svg
@@ -164,19 +159,24 @@ const Navbar = () => {
                   />
                 </svg>
                 <span className="badge badge-sm indicator-item">
-                  {" "}
-                  {/* {cart.length || 0}{" "} */}
+                  {cart.length || 0}
                 </span>
               </div>
             </div>
-            {/* {user ? (
+
+            {user ? (
               <>
-                <Profile user={user} />
+                <Profile />
+                {/* <h1>Loggied</h1> */}
               </>
             ) : (
               <button
                 className="btn bg-red rounded-full text-white flex items-center gap-2 "
-                onClick={() => document.getElementById("login").showModal()}
+                onClick={() =>
+                  (
+                    window.document.getElementById("login") as HTMLFormElement
+                  ).showModal()
+                }
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -194,16 +194,15 @@ const Navbar = () => {
                 </svg>
                 Login
               </button>
-            )} */}
+              // <h1>login</h1>
+            )}
+            <Modal nameModal={"login"} />
           </div>
-          {/* <Modal nameModal={"login"} />
           <ModalCard
             name={"carts"}
             setTotalQuantity={setTotalQuantity}
             totalQuantity={totalQuantity}
-            reload={reload}
-            setReload={setReload}
-          /> */}
+          />
         </div>
       </div>
     </header>

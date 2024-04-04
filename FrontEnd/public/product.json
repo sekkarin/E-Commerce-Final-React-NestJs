@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "65e03410badaf456307b4d86",
+    "name": "Product 1",
+    "description": "Description for Product 1",
+    "category": "popular",
+    "price": "123.45",
+    "image": "https://source.unsplash.com/random/800x700/?clothing"
+  },
+  {
+    "_id": "65e03410badaf456307b4d87",
+    "name": "Product 2",
+    "description": "Description for Product 2",
+    "category": "accessories",
+    "price": "67.89",
+    "image": "https://source.unsplash.com/random/800x700/?accessories"
+  },
+  {
+    "_id": "65e03410badaf456307b4d8a",
+    "name": "Product 3",
+    "description": "Description for Product 3",
+    "category": "gadgets",
+    "price": "199.99",
+    "image": "https://source.unsplash.com/random/800x700/?gadgets"
+  },
+  {
+    "_id": "65e03410badaf456307b4d8d",
+    "name": "Product 4",
+    "description": "Description for Product 4",
+    "category": "swag",
+    "price": "49.99",
+    "image": "https://source.unsplash.com/random/800x700/?swag"
+  },
+  {
+    "_id": "65e03410badaf456307b4d90",
+    "name": "Product 5",
+    "description": "Description for Product 5",
+    "category": "popular",
+    "price": "79.99",
+    "image": "https://source.unsplash.com/random/800x700/?clothing"
+  },
+  {
+    "_id": "65e03410badaf456307b4d89",
+    "name": "Product 6",
+    "description": "Description for Product 6",
+    "category": "clothing",
+    "price": "149.99",
+    "image": "https://source.unsplash.com/random/800x700/?accessories"
+  },
+  {
+    "_id": "65e03410badaf456307b4d8b",
+    "name": "Product 7",
+    "description": "Description for Product 7",
+    "category": "gadgets",
+    "price": "109.99",
+    "image": "https://source.unsplash.com/random/800x700/?gadgets"
+  },
+  {
+    "_id": "65e03410badaf456307b4d8c",
+    "name": "Product 8",
+    "description": "Description for Product 8",
+    "category": "popular",
+    "price": "29.99",
+    "image": "https://source.unsplash.com/random/800x700/?swag"
+  },
+  {
+    "_id": "65e03410badaf456307b4d8e",
+    "name": "Product 9",
+    "description": "Description for Product 9",
+    "category": "clothing",
+    "price": "89.99",
+    "image": "https://source.unsplash.com/random/800x700/?clothing"
+  },
+  {
+    "_id": "65e03410badaf456307b4d84",
+    "name": "Product 10",
+    "description": "Description for Product 10",
+    "category": "accessories",
+    "price": "54.99",
+    "image": "https://source.unsplash.com/random/800x700/?accessories"
+  },
+  {
+    "_id": "65e03410badaf456307b4d8f",
+    "name": "Product 11",
+    "description": "Description for Product 11",
+    "category": "popular",
+    "price": "179.99",
+    "image": "https://source.unsplash.com/random/800x700/?gadgets"
+  },
+  {
+    "_id": "65e03410badaf456307b4d91",
+    "name": "Product 12",
+    "description": "Description for Product 12",
+    "category": "swag",
+    "price": "39.99",
+    "image": "https://source.unsplash.com/random/800x700/?swag"
+  },
+  {
+    "_id": "65e03410badaf456307b4d83",
+    "name": "Product 13",
+    "description": "Description for Product 13",
+    "category": "popular",
+    "price": "129.99",
+    "image": "https://source.unsplash.com/random/800x700/?clothing"
+  },
+  {
+    "_id": "65e03410badaf456307b4d85",
+    "name": "Product 14",
+    "description": "Description for Product 14",
+    "category": "accessories",
+    "price": "94.99",
+    "image": "https://source.unsplash.com/random/800x700/?accessories"
+  },
+  {
+    "_id": "65e03410badaf456307b4d88",
+    "name": "Product 15",
+    "description": "Description for Product 15",
+    "category": "gadgets",
+    "price": "149.99",
+    "image": "https://source.unsplash.com/random/800x700/?gadgets"
+  }
+]

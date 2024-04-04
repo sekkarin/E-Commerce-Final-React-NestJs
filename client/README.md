@@ -1,3 +1,7 @@
+1. auth private route admin user general
+2. list production
+3. cart 
+4. manage user and product admin
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
